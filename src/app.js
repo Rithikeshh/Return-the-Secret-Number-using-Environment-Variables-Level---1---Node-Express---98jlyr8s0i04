@@ -13,7 +13,7 @@ app.use(express.json());
 */
 app.get('/api/get-env', (req, res) => {
    //Write your code here
-    res.send(number)
+    res.json({"number":number})
 });
 
 module.exports = app;

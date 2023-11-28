@@ -1,9 +1,7 @@
 const express = require('express');
-const dotEnv = require('dotenv');
 const app = express();
 app.use(express.json());
-dotEnv.config()
-const number = process.env.NUMBER;
+
 
 // Write a GET route to return the value stored in the NUMBER variable stored in the .env file
 /*
@@ -13,7 +11,8 @@ const number = process.env.NUMBER;
 */
 app.get('/api/get-env', (req, res) => {
    //Write your code here
-    res.json({"number":number})
+    const number = process.env.NUMBER;
+    res.status(200).json({"number":number})
 });
 
 module.exports = app;
